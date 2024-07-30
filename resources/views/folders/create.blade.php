@@ -25,6 +25,20 @@
                                 <div class="form-group">
                                     <label for="title">フォルダ名</label>
                                     <input type="text" class="form-control" name="title" id="title" />
+                                    @error
+                                    <p>그만둬잉!</p>
+                                    @enderror
+                                    {{-- 重要ポイント --}}
+                                    {{-- @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif --}}
+                                    {{-- 重要ポイント --}}
                                 </div>
                                 <div class="text-right">
                                     <button type="submit" class="btn btn-primary">送信</button>

@@ -9,5 +9,5 @@ use App\Http\Controllers\FolderController;
 // });
 // Route::redirect('/', '/folders/1/tasks');
 Route::get('/folders/{id}/tasks', [TaskController::class, 'index'])->name('tasks.index');
-Route::get('/folders/create', [FolderController::class, "showCreateForm"]);
-Route::post('/folders/create', [FolderController::class, "create"])->name('folders.createddd');
+Route::get('/folders/create', [FolderController::class, "showCreateForm"])->name('folders.createddd');
+Route::post('/folders/create', [FolderController::class, "create"]);

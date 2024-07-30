@@ -15,9 +15,11 @@ class FolderController extends Controller
     public function create(Request $request)
     {
         $folder = new Folder();
-        $folder->title = $request->title;
+        $validated = $request->validate([
+            'title' => ['required']
+        ]);
+        $folder->title = $validated['title'];
         $folder->save();
-
         return redirect()->route('tasks.index', [
             'id' => $folder->id,
         ]);
